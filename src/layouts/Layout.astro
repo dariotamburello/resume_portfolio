@@ -1,0 +1,143 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import type { CV } from "@/cv";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+interface Props {
+  title: string;
+  cv: CV;
+}
+
+const { title, cv } = Astro.props;
+const { basics } = cv;
+const { image, summary, url } = basics;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={summary} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="preload" as="image" href={image} />
+
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={summary} />
+    <meta property="og:image" content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content={url.split("//")[1] ?? ""} />
+    <meta property="twitter:url" content={url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={summary} />
+    <meta name="twitter:image" content="" />
+
+    <ViewTransitions />
+  </head>
+  <body class="bg-white dark:bg-neutral-800 transition-all">
+    <slot />
+  </body>
+</html>
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+
+  @font-face {
+    font-family: "SourceSerif";
+    src: url("/fonts/SourceSerift.woff") format("woff");
+  }
+
+  .print {
+    display: none;
+  }
+
+  @media print {
+    .print {
+      display: block;
+    }
+    .no-print {
+      display: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  const setTheme = () => {
+    const theme = (() => {
+      if (
+        typeof localStorage !== "undefined" &&
+        localStorage.getItem("theme")
+      ) {
+        return localStorage.getItem("theme");
+      }
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+      return "light";
+    })();
+
+    if (theme === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+
+    window.localStorage.setItem("theme", theme || "light");
+  };
+
+  setTheme();
+
+  document.addEventListener("astro:after-swap", setTheme);
+</script>

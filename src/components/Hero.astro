@@ -1,0 +1,92 @@
+---
+import GitHub from "src/icons/GitHub.astro";
+import LinkedIn from "src/icons/LinkedIn.astro";
+import Phone from "src/icons/Phone.astro";
+import Mail from "src/icons/Mail.astro";
+import type { SocialIcon } from "src/types";
+import WorldMap from "src/icons/WorldMap.astro";
+
+const { basics } = Astro.props.cv;
+
+const { name, label, image, email, phone, url, location, profiles } = basics;
+const SOCIAL_ICONS: SocialIcon = {
+  GitHub,
+  LinkedIn,
+};
+const printInfo = [email, phone, url].filter(Boolean).join(" • ");
+---
+
+<section class="mb-4">
+  <div class="flex flex-row justify-between items-center">
+    <div class="">
+      <h1 class="text-3xl font-bold mb-1 text-neutral-800 dark:text-white">
+        {name}
+      </h1>
+      <div class="pl-2">
+        <h2 class="text-base text-neutral-800 dark:text-neutral-300">
+          {label}
+        </h2>
+        <span
+          class="flex items-center text-base gap-2 text-neutral-800 dark:text-neutral-300"
+        >
+          <WorldMap />
+          {location.city}, {location.region}
+        </span>
+        <div class="print text-xs text-neutral-800 dark:text-neutral-300">
+          {printInfo}
+        </div>
+
+        <div
+          class="no-print flex flex-row gap-2 pt-2 text-neutral-800 dark:text-neutral-300"
+        >
+          {
+            email && (
+              <a
+                class="border-[1px] p-1 rounded-md border-slate-500 hover:bg-neutral-800/20 dark:hover:bg-neutral-600 transition-colors"
+                href={`mailto:${email}`}
+                title={`Send email to ${name}: ${email}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Mail />
+              </a>
+            )
+          }
+          {
+            phone && (
+              <a
+                class="border-[1px] p-1 rounded-md border-slate-500 hover:bg-slate-500/20 dark:hover:bg-neutral-600 transition-colors"
+                href={`tel:${phone}`}
+                title={`Call to ${name}: ${phone}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Phone />
+              </a>
+            )
+          }
+          {
+            profiles.map(({ network, url, username }) => {
+              const Icon = SOCIAL_ICONS[network];
+              return (
+                <a
+                  class="border-[1px] p-1 rounded-md border-slate-500 hover:bg-slate-500/20 dark:hover:bg-neutral-600 transition-colors"
+                  href={url}
+                  title={`Visit profile of ${name}: ${network}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon />
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+
+    <figure>
+      <img class="max-h-32 rounded-3xl" src={image} alt=`${name} photo` />
+    </figure>
+  </div>
+</section>

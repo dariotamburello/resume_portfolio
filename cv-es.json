@@ -1,0 +1,162 @@
+{
+  "basics": {
+    "name": "Darío Nicolas Tamburello",
+    "label": "Desarrollador Full Stack",
+    "image": "/dariotamburello.bmp",
+    "email": "dariotamburello@gmail.com",
+    "phone": "(54) 3515-174969",
+    "url": "https://github.com/dariotamburello",
+    "summary": "Soy desarrollador FullStack con experiencia en frameworks y librerías basadas en Javascript como React, NodeJS, Typescript, etc, así como en .NET, C#, y bases de datos relacionales y no relacionales. También tengo conocimientos en herramientas DevOps como Git, Docker y AWS. He trabajado en equipos de diversos tamaños, adaptándome a distintas dinámicas y entornos de trabajo.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Córdoba",
+      "countryCode": "AR",
+      "region": "Argentina"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "dariotamburello89",
+        "url": "https://www.linkedin.com/in/dariotamburello89/"
+      },
+      {
+        "network": "GitHub",
+        "username": "dariotamburello",
+        "url": "https://github.com/dariotamburello/"
+      }
+    ]
+  },
+  "work_experience": [
+    {
+      "name": "Eling S.A.",
+      "position": "Administrador Infraestructura/Aplicaciones",
+      "startDate": "2011-09",
+      "endDate": "2022-06",
+      "location": "Córdoba, Argentina",
+      "tasks": [
+        "Gestión y mantenimiento de servidores Windows y Unix, bases de datos MSSQL y MySQL, Docker y VMWare.",
+        "Desarrollo y mantenimiento de aplicaciones en JavaScript (NodeJS + React) para el monitoreo de servidores internos de la empresa.",
+        "Responsable de aplicaciones Genexus y .NET, encargado de análisis de requerimientos y seguimiento de tareas con el equipo de desarrollo."
+      ],
+      "abilities": ["Windows", "Linux", "Docker"]
+    },
+    {
+      "name": "Plum",
+      "position": "Desarrollador Full Stack",
+      "startDate": "2022-06",
+      "endDate": "2024-01",
+      "location": "Remote",
+      "tasks": [
+        "Desarrollo y mantenimiento de los principales sitios de E-commerce en empresa norteamericana utilizando .NET.",
+        "Enfoque en el front-end, mejorando la experiencia UX/UI tanto para escritorio como para dispositivos móviles.",
+        "Implementación de tareas backend (backoffice) e integración de APIs de Exigo (pasarela pagos, envíos, etc).",
+        "Gestión completa del código fuente de los proyectos a través de GitHub, siguiendo buenas prácticas y obteniendo un alto índice de aprobación en revisiones de código.",
+        "Integración en el equipo de desarrollo utilizando metodologías ágiles (Scrum) y seguimiento de tareas mediante Monday.",
+        "Participación en dailys completamente en inglés y reuniones con el cliente en Estados Unidos."
+      ],
+      "abilities": ["Windows", "Linux", "Docker"]
+    },
+    {
+      "name": "Freelance",
+      "position": "Desarrollador Full Stack",
+      "startDate": "2018-01",
+      "endDate": "Actualidad",
+      "location": "Remote",
+      "tasks": [
+        "Desarrollo y mantenimiento del sitio web www.sabrosoweb.com.ar.",
+        "Desarrollo de proyectos personales y para terceros utilizando lenguajes basados en JavaScript: React, NodeJS, Angular, Typescript y React Native.",
+        "Mis proyectos: github.com/dariotamburello."
+      ],
+      "abilities": ["Windows", "Linux", "Docker"]
+    }
+  ],
+  "education": [
+    {
+      "institute": "Colegio IES Siglo 21",
+      "location": "Córdoba, Argentina",
+      "degree": "Analista en Sistemas de Programación",
+      "startDate": "2012-01",
+      "endDate": "2017-12"
+    }
+  ],
+  "skills": {
+    "language": [
+      {
+        "title": "Inglés (B1)",
+        "levels": [
+          {
+            "skill": "Lectura",
+            "value": "Alto"
+          },
+          {
+            "skill": "Escritura",
+            "value": "Alto"
+          },
+          {
+            "skill": "Conversación",
+            "value": "Medio"
+          }
+        ]
+      }
+    ],
+    "tecnology": [
+      {
+        "title": "Tecnologías",
+        "levels": [
+          {
+            "skill": "Javascript (Vanilla)",
+            "value": 8
+          },
+          {
+            "skill": "React",
+            "value": 8
+          },
+          {
+            "skill": "Node",
+            "value": 8
+          },
+          {
+            "skill": "Angular",
+            "value": 6
+          },
+          {
+            "skill": "Astro",
+            "value": 8
+          },
+          {
+            "skill": "Typescript",
+            "value": 7
+          },
+          {
+            "skill": "Git",
+            "value": 9
+          }
+        ]
+      }
+    ],
+    "interpersonal": [
+      {
+        "title": "Interpersonal",
+        "levels": [
+          {
+            "skill": "Liderazgo",
+            "value": 7
+          },
+          {
+            "skill": "Hablar en público",
+            "value": 7
+          },
+          {
+            "skill": "Diseño UX/UI",
+            "value": 9
+          },
+          {
+            "skill": "Autodidacta",
+            "value": 9
+          }
+        ]
+      }
+    ]
+  }
+}

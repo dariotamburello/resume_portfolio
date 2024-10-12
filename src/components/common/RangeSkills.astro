@@ -1,0 +1,76 @@
+---
+const { value } = Astro.props;
+//fcd34db3
+//#0c4a6e
+---
+
+<input type="range" max="10" min="0" value={value} disabled class="w-full" />
+
+<style>
+  input[type="range"] {
+    accent-color: coral;
+  }
+
+  input[type="range"] {
+    appearance: none;
+    background-color: transparent;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    position: relative;
+    height: 8px;
+    background-color: #fcd34db3;
+    border-radius: 8px;
+  }
+
+  input[type="range"]::-moz-range-track {
+    position: relative;
+    height: 8px;
+    background-color: #fcd34db3;
+    border-radius: 8px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    box-sizing: border-box;
+    appearance: none;
+    position: relative;
+    background-color: purple;
+    border: 2px solid white;
+    border-radius: 8px;
+    width: 18px;
+    height: 18px;
+    top: 50%;
+    translate: 0 -50%;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    box-sizing: border-box;
+    appearance: none;
+    position: relative;
+    background-color: purple;
+    border: 2px solid white;
+    border-radius: 8px;
+    width: 18px;
+    height: 18px;
+  }
+
+  input[type="range"]::-moz-range-progress {
+    height: 8px;
+    background-color: orangered;
+    border-radius: 8px;
+  }
+
+  input[type="range"]::-webkit-slider-progress-track {
+    height: 8px;
+    background-color: orangered;
+    border-radius: 8px;
+  }
+
+  html.dark input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #0c4a6e;
+  }
+
+  html.dark input[type="range"]::-moz-range-track {
+    background-color: #0c4a6e;
+  }
+</style>

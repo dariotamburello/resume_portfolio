@@ -1,0 +1,10 @@
+---
+const { color, colorDark } = Astro.props;
+---
+
+<div
+  class=`triangle no-print ml-5 inline-block w-0 h-0 border-solid border-t-[20px] border-r-[20px] border-l-0
+         border-b-0 border-l-transparent border-r-transparent !border-t-${color} dark:!border-t-${colorDark} 
+         border-b-transparent`
+>
+</div>

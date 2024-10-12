@@ -1,0 +1,17 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import HeaderTitle from "./common/HeaderTitle.astro";
+const { basics } = Astro.props.cv;
+const { summary } = basics;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="mb-5">
+  <HeaderTitle icon="🖋️">{t("about.title")}</HeaderTitle>
+  <p
+    class="text-sm text-pretty mb-1 pl-2 text-neutral-800 dark:text-neutral-300 !border-t-amber-300/70 dark:!border-t-sky-900"
+  >
+    {summary}
+  </p>
+</section>

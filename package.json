@@ -1,0 +1,17 @@
+{
+  "name": "resume-portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.1",
+    "astro": "^4.15.12",
+    "tailwindcss": "^3.4.13"
+  }
+}

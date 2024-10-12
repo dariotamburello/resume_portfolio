@@ -1,0 +1,27 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import HeaderTitle from "./common/HeaderTitle.astro";
+const { education } = Astro.props.cv;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section>
+  <HeaderTitle icon="🎓">{t("education.title")}</HeaderTitle>
+  {
+    education.map((edu) => (
+      <div class="flex flex-col mt-4 pl-2 text-neutral-800 dark:text-neutral-300">
+        <div class="flex flex-row gap-2 mb-0">
+          <p class="text-xs">
+            📅 {edu.startDate} - {edu.endDate}
+          </p>
+          <p class="text-xs">📍 {edu.location}</p>
+        </div>
+        <div>
+          <h2 class="text-base mb-1 font-bold">{edu.institute}</h2>
+          <p class="text-xs">{edu.degree}</p>
+        </div>
+      </div>
+    ))
+  }
+</section>

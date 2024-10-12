@@ -1,0 +1,40 @@
+---
+import { getLangFromUrl, languages, useTranslations } from "../../i18n/utils";
+import { getAbsoluteLocaleUrl } from "astro:i18n";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+{
+  Object.entries(languages).map(([l]) => {
+    const url = getAbsoluteLocaleUrl(l);
+    if (lang === l) {
+      return <li class="hidden">{l.toUpperCase()}</li>;
+    }
+
+    return (
+      <a
+        href={url}
+        title={t("languagepicker.a.title")}
+        class="list-none scale-90 hover:scale-110 text-neutral-800 dark:text-neutral-300 transition-all"
+      >
+        <li>{l.toUpperCase()}</li>
+      </a>
+    );
+  })
+}
+<!-- <button
+  id="changeLanguaje"
+  value="es"
+  class="scale-90 hover:scale-110 text-neutral-800 dark:text-neutral-300 transition-all"
+>
+  ES
+</button> -->
+
+<!-- <script>
+  const $button = document.querySelector("#changeLanguaje");
+  $button.addEventListener("click", (e) => {
+    $button.value === "en" ? ($button.value = "es") : ($button.value = "en");
+    console.log($button.value);
+  });
+</script> -->
