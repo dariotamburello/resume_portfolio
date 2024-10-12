@@ -4,8 +4,8 @@
 
 A web app built in Astro that creates resumes from a .json file. It supports multiple languages, light/dark mode, and is fully responsive, allowing resumes to be viewed as a webpage or printed.
 
-![Asana clone capture](https://asana-clone-wine.vercel.app/images/capture.jpg)
+![Resum web capture](https://resume-portfolio-psi-lemon.vercel.app/preview.webp)
 
 > **Test it!**
-> Access to: [https://asana-clone-wine.vercel.app/](https://asana-clone-wine.vercel.app/)
+> Access to: [https://resume-portfolio-psi-lemon.vercel.app/en/](https://resume-portfolio-psi-lemon.vercel.app/en/)
 > or donwload the code and `npm run dev`
