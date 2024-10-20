@@ -1,19 +1,19 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import type { CV } from "@/cv";
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { ViewTransitions } from 'astro:transitions'
+import type { CV } from '@/cv'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
 interface Props {
-  title: string;
-  cv: CV;
+  title: string
+  cv: CV
 }
 
-const { title, cv } = Astro.props;
-const { basics } = cv;
-const { image, summary, url } = basics;
+const { title, cv } = Astro.props
+const { basics } = cv
+const { image, summary, url } = basics
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <!doctype html>
@@ -30,14 +30,20 @@ const t = useTranslations(lang);
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={summary} />
-    <meta property="og:image" content="" />
+    <meta
+      property="og:image"
+      content="https://resume-portfolio-psi-lemon.vercel.app/preview.webp"
+    />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url.split("//")[1] ?? ""} />
+    <meta property="twitter:domain" content={url.split('//')[1] ?? ''} />
     <meta property="twitter:url" content={url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={summary} />
-    <meta name="twitter:image" content="" />
+    <meta
+      name="twitter:image"
+      content="https://resume-portfolio-psi-lemon.vercel.app/preview.webp"
+    />
 
     <ViewTransitions />
   </head>
@@ -95,8 +101,8 @@ const t = useTranslations(lang);
   }
 
   @font-face {
-    font-family: "SourceSerif";
-    src: url("/fonts/SourceSerift.woff") format("woff");
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerift.woff') format('woff');
   }
 
   .print {
@@ -117,27 +123,27 @@ const t = useTranslations(lang);
   const setTheme = () => {
     const theme = (() => {
       if (
-        typeof localStorage !== "undefined" &&
-        localStorage.getItem("theme")
+        typeof localStorage !== 'undefined' &&
+        localStorage.getItem('theme')
       ) {
-        return localStorage.getItem("theme");
+        return localStorage.getItem('theme')
       }
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        return "dark";
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
       }
-      return "light";
-    })();
+      return 'light'
+    })()
 
-    if (theme === "light") {
-      document.documentElement.classList.remove("dark");
+    if (theme === 'light') {
+      document.documentElement.classList.remove('dark')
     } else {
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.add('dark')
     }
 
-    window.localStorage.setItem("theme", theme || "light");
-  };
+    window.localStorage.setItem('theme', theme || 'light')
+  }
 
-  setTheme();
+  setTheme()
 
-  document.addEventListener("astro:after-swap", setTheme);
+  document.addEventListener('astro:after-swap', setTheme)
 </script>
